@@ -1,4 +1,4 @@
-('C:\\Users\\Bills\\Desktop\\pomodoro_twilight\\build\\main\\PYZ-00.pyz',
+('C:\\Users\\Bills\\Desktop\\Proyects\\pomodoro_twilight\\build\\main\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\Bills\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),

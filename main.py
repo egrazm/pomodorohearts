@@ -25,6 +25,7 @@ class PomodoroApp:
         self.root.geometry("800x600")
         self.root.resizable(True, True)
         self.remaining_seconds = WORK_MIN * 60
+        self.timer_after_id=None
 
 
         self.original_bg = Image.open(resource_path("assets/bg_twilighttown.png"))
@@ -89,7 +90,7 @@ class PomodoroApp:
         self.remaining_seconds = seconds  # Actualiza en cada segundo
 
         if seconds > 0:
-            self.root.after(1000, lambda: self._countdown(seconds - 1))
+            self.timer_after_id = self.root.after(1000, lambda: self._countdown(seconds - 1))
         else:
             self._next_session()
 
@@ -107,10 +108,17 @@ class PomodoroApp:
         self.canvas.itemconfig(self.timer_text, text="20:00")
         self.canvas.itemconfig(self.session_label, text="Work Time")
         self.cycle_count = 0
+        if self.timer_after_id:
+            self.root.after_cancel(self.timer_after_id)
+            self.timer_after_id = None
 
 
     def pause_timer(self):
         self.running = False
+        if self.timer_after_id:
+            self.root.after_cancel(self.timer_after_id)
+            self.timer_after_id = None
+
 
 if __name__ == "__main__":
     root = tk.Tk()
