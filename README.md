@@ -42,7 +42,7 @@ pomodoro-hearts/
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/pomodoro-hearts.git
+   git clone https://github.com/egrazm/pomodoro-hearts.git
    cd pomodoro-hearts
    ```
 
